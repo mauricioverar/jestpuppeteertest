@@ -10,6 +10,11 @@ import puppeteer from "puppeteer"
 
     const page = await browser.newPage()
     await page.goto("https://books.toscrape.com/")
+
+    await page.screenshot({
+      path: "screenshots/paginaPrincipal.png",
+      fullPage: true,
+    })
     
     await browser.close()
   } catch (error) {
@@ -20,6 +25,6 @@ import puppeteer from "puppeteer"
 
 /*
 
-npm test
+node scripts/puppeteer.js
   
 */
